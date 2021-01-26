@@ -1,0 +1,21 @@
+<!-- shopid=XXXX MUST be defined in URL-->
+<!-- Example: etsyframe.html?shopid=19485872-->
+
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Etsy Shop</title>
+</head>
+
+<body>
+    <script type='text/javascript' src='https://www.etsy.com/assets/js/etsy_mini_shop.js'></script>
+    <script type='text/javascript'>
+        var queryDict = {}
+        location.search.substr(1).split("&").forEach(function(item) {queryDict[item.split("=")[0]] = item.split("=")[1]})
+        new Etsy.Mini(queryDict.shopid,'gallery',3,6,0,'https://www.etsy.com');
+    </script>
+
+</body>
+</html>
